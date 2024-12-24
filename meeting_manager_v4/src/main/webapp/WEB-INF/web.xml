@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+         http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>Archetype Created Web Application</display-name>
+<!--  &lt;!&ndash;配置文件加载&ndash;&gt;-->
+<!--  <context-param>-->
+<!--    <param-name>contextConfigLocation</param-name>-->
+<!--    <param-value>classpath:application-*.xml</param-value>-->
+<!--  </context-param>-->
+
+
+<!--  容器加载的监听器-->
+<!--  <listener>-->
+<!--    <listener-class>-->
+<!--      org.springframework.web.context.ContextLoaderListener-->
+<!--    </listener-class>-->
+<!--  </listener>-->
+  <!--Spring MVC 前端控制器-->
+  <servlet>
+    <servlet-name>DispatcherServlet</servlet-name>
+    <servlet-class>
+      org.springframework.web.servlet.DispatcherServlet
+    </servlet-class>
+    <!--初始化参数-->
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>classpath:Spring-MVC.xml</param-value>
+    </init-param>
+    <!--项目启动时候，初始化前端控制器-->
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DispatcherServlet</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+<servlet-mapping>
+  <servlet-name>default</servlet-name>
+  <url-pattern>*.css</url-pattern>
+  <url-pattern>*.jpg</url-pattern>
+  <url-pattern>*.js</url-pattern>
+<!--  <url-pattern>*.jsp</url-pattern>-->
+</servlet-mapping>
+
+</web-app>

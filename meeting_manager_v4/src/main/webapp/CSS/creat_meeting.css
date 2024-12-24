@@ -1,0 +1,376 @@
+
+body, h1, h2, label, input, select, button {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a2a6c, #2a4858);
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    padding: 0;
+    margin: 60px 0 0;
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #fff;
+    font-weight: 600;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    margin-top: 170px;
+    width: 100%;
+}
+
+h2 {
+    color: #555;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.alert {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.success {
+    color: #28a745;
+    background-color: #d4edda;
+}
+
+.error {
+    color: #dc3545;
+    background-color: #f8d7da;
+}
+
+/* 表单 */
+.form-group {
+    width: 50%;
+    min-width: 400px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    color: #fff;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.checkbox-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* 复选框容器样式 */
+.form-check {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-check:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/*    定义复选框样式 */
+.form-check-input {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+    appearance: none;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.form-check-input:checked {
+    background-color: #fff;
+    border-color: #fff;
+}
+
+.form-check-input:checked::before {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #1a2a6c;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* 动画效果 */
+@keyframes container-appear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes title-glow {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
+        0 0 30px rgba(255, 255, 255, 0.6);
+    }
+}
+
+@keyframes line-glow {
+    0%, 100% {
+        opacity: 0.5;
+        width: 100px;
+    }
+    50% {
+        opacity: 1;
+        width: 150px;
+    }
+}
+
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes button-shine {
+    0% {
+        left: -50%;
+    }
+    100% {
+        left: 150%;
+    }
+}
+
+/* 错误提示样式 */
+.error-message {
+    color: #ff6b6b;
+    font-size: 0.9em;
+    margin-top: 8px;
+    padding: 8px 12px;
+    background: rgba(255, 107, 107, 0.2);
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    animation: fade-in 0.3s ease-out;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 响应式设计优化 */
+@media (max-width: 768px) {
+    .form-group,
+    .select-attendees {
+        width: 90%;
+        min-width: unset;
+    }
+
+    .container {
+        padding: 20px;
+    }
+}
+
+/* 主要内容区域 */
+.main-content {
+    padding: 20px;
+    margin-top: 60px; /* 为header留出空间 */
+}
+
+/* 容器样式 */
+.container {
+    max-width: 800px;
+    margin: 0 auto;  /* 修改这里，去掉上边距 */
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* 表单整体样式 */
+form {
+    width: 500px; /* 固定表单宽度 */
+    margin: 0 auto; /* 自动左右边距实现居中 */
+}
+
+/* 表单字段布局 */
+.form-group {
+    width: 100%;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+/* 输入框样式 */
+input[type="text"],
+input[type="datetime-local"] {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    font-size: 1.1em;
+    color: #fff;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* 标签样式 */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    color: #fff;
+}
+
+/* 参会人员选择区域 */
+.select-attendees {
+    /*width: 100%;*/
+    margin: 30px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+}
+
+.select-attendees h2 {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    color: #fff;
+}
+
+/* 提交按钮 */
+button[type="submit"] {
+    display: block;
+    width: 200px;
+    margin: 30px auto;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+/* 响应式设计 */
+@media (max-width: 768px) {
+    form {
+        width: 90%;
+        min-width: unset;
+    }
+
+    .container {
+        padding: 20px;
+    }
+}
+
+/* 在现有样式基础上添加 */
+
+/* 按钮样式 */
+.form-actions {
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.submit-btn, .cancel-btn {
+    background: rgba(255, 255, 255, 0.2);
+    min-width: 200px;
+    margin: 30px auto;
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.submit-btn:hover, .cancel-btn:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    form {
+        width: 90%;
+        min-width: unset;
+    }
+
+    .container {
+        padding: 20px;
+    }
+}
